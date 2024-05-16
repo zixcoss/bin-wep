@@ -1,5 +1,8 @@
 import React from 'react'
 import Bin from './Img/Bin.png'
+import home from './Img/home.png'
+import controller from './Img/game-controller.png'
+import setting from './Img/settings.png'
 
 function Sidebar() {
   return (
@@ -13,10 +16,19 @@ function Sidebar() {
                     <h1 className=''>BIN</h1>
                 </div>
             </div> 
-            <div className='border-2 border-green-600 mt-6'>
-                <p>menu</p>
-                <div className=''> 
-
+            <div className='border-2 border-green-600 mt-6 '>
+                <p className='text-3xl text-slate-400 text-center'>menu</p>
+                <div className='flex mt-6' >
+                    <img src={home} alt="" className='w-16'/>
+                    <h2>Dashboard</h2> 
+                </div>
+                <div className='flex'>
+                    <img src={controller} alt="" className='w-16'/>
+                    <h2>Controller</h2>
+                </div>
+                <div className='flex'>
+                    <img src={setting} alt="" className='w-16'/>
+                    <h2>Setting</h2>
                 </div>
             </div>
         </div>
