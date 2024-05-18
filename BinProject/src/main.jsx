@@ -12,7 +12,7 @@ import Setting from './Component/Setting.jsx';
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <Dashboard/>
+    element: <Wifi/>
   },
   {
     path:"Control",
