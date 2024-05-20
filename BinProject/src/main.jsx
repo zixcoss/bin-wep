@@ -15,11 +15,15 @@ const router = createBrowserRouter([
     element: <Wifi/>
   },
   {
-    path:"Control",
+    path: '/Dashboard',
+    element: <Dashboard />
+  },
+  {
+    path:"/Control",
     element: <Control/>
   },
   {
-    path:"Setting",
+    path:"/Setting",
     element: <Setting/>
   },
 ])
