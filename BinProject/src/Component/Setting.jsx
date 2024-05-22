@@ -15,8 +15,9 @@ function Setting() {
     <>
       <div className='flex'>
         <Sidebar />
-        <div className='p-4 w-full flex flex-col justify-center items-center bg-gray-200'>
-          <div className='w-3/5 h-2/4 flex flex-col justify-center items-center bg-green-100 rounded-lg p-4'>
+        <div className='p-4 w-full flex flex-col justify-center items-center bg-gray-400'>
+        <h1 className='mb-8 font-bold text-6xl text-emerald-800'>Setting</h1>
+          <div className='w-3/5 h-2/4 p-4 flex flex-col justify-center items-center bg-green-100 shadow-md rounded-lg'>
             <div className='w-full bg-white p-4 rounded shadow-md border-2 border-green-600'>
               <label className='block text-lg font-medium text-gray-700'>
               คำที่ใช้เรียก
