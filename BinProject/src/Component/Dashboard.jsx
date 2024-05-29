@@ -10,9 +10,19 @@ function Dashboard() {
             <div className="grid grid-cols-3 grid-rows-3 gap-4 h-screen p-8 w-full">
               {/* กล่องที่ 1 */}
               <div className="col-span-2 row-span-2 bg-red-300 border-2 border-red-600 flex flex-col justify-start items-start text-2xl font-bold p-4">
-                <h1>แบตเตอรี่</h1>
-                <div className='flex justify-center items-center w-full h-full border-2 border-green-600'>
-                  <img src={batteryfull} alt=""/>
+                <h1 className='text-4xl'>แบตเตอรี่</h1>
+                <div className='flex flex-col justify-start items-center w-full h-full '>
+                  <img src={batteryfull} alt="" className='w-96 '/>
+                  <div className='flex w-full justify-around mt-2 '>
+                    <div className='flex flex-col items-center'>
+                      <span className='text-lg'>แบตเตอรี่</span>
+                      <span className='text-5xl'>100%</span>
+                    </div>
+                    <div className='flex flex-col items-center '>
+                      <span className='text-lg'>อัตราการเสื่อสภาพ</span>
+                      <span className='text-5xl'>0%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               {/* กล่องที่ 2 */}
