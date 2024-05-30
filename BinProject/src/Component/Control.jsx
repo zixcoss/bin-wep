@@ -5,7 +5,7 @@ function Control() {
     <>
         <div className='flex'>
             <Sidebar/>
-            <div className="flex w-full justify-center items-center bg-gray-200 h-screen ">
+            <div className="flex w-full justify-center items-center h-screen ">
             <div className="relative flex items-center justify-center w-3/4 h-3/4 bg-green-200 border-4 border-green-600 rounded-full shadow-lg">
               {/* ปุ่มขึ้น */}
               <button className="absolute top-6 w-44 h-44 bg-emerald-900 text-white border-2 border-gray-500 rounded-full focus:outline-none hover:bg-gray-400">
