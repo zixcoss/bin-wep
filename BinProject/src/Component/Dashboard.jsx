@@ -38,12 +38,12 @@ function Dashboard() {
                 </div>
               </div>
               {/* กล่องที่ 3 */}
-              <div className="col-span-1 row-span-1 bg-green-300 border-2 border-green-600 flex items-center justify-center text-2xl font-bold">
-                กล่องที่ 3
+              <div className="col-span-1 row-span-1 bg-green-300 border-2 border-green-600 flex flex-col justify-start items-start text-2xl font-bold p-4">
+                <h1 className='text-4xl'>สถานะ</h1>
               </div>
               {/* กล่องที่ 4 */}
-              <div className="col-span-1 row-span-1 bg-yellow-300 border-2 border-yellow-600 flex items-center justify-center text-2xl font-bold">
-                กล่องที่ 4
+              <div className="col-span-1 row-span-1 bg-yellow-300 border-2 border-yellow-600 flex flex-col justify-start items-start text-2xl font-bold p-4">
+                <h1 className='text-4xl'>WIFI</h1>
               </div>
             </div>
         </div>
