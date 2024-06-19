@@ -36,6 +36,10 @@ function Sidebar() {
                         <img src={setting} alt="Setting Icon" className="w-10 h-10 mr-2 ml-2" />
                         <Link to='/Setting' className='text-3xl text-emerald-700 hover:text-white'>Setting</Link>
                     </Link>
+                    <Link to='/Navbar' className="flex items-center mt-4 py-4 shadow-md rounded-lg hover:bg-green-500 transition duration-300">
+                        <img src={setting} alt="Setting Icon" className="w-10 h-10 mr-2 ml-2" />
+                        <Link to='/Navbar' className='text-3xl text-emerald-700 hover:text-white'>Navbar</Link>
+                    </Link>
                 </ul>
             </nav>
         </div>
