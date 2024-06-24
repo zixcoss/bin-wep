@@ -6,14 +6,14 @@ function Control() {
   return (
     <>
       <div className='flex flex-col md:flex-row h-screen'>
-        <div className='hidden md:block'>
-          <Sidebar />
+        <div className='hidden 2xl:block'>
+          <Sidebar /> 
         </div>
-        <div className="flex flex-col md:flex-row w-full justify-center items-center h-full p-4">
-          <div className='fixed top-0 block md:hidden'>
+        <div className="flex flex-col md:flex-row w-full justify-center items-center h-full p-4 2xl:w-full">
+          <div className='fixed top-0 block 2xl:hidden'>
             <Navbar />
           </div>
-          <div className="relative flex flex-col items-center justify-center w-full h-96 md:w-3/4 h-full md:h-3/4 bg-green-200 border-4 border-green-600 rounded-full shadow-lg">
+          <div className="relative flex flex-col items-center justify-center w-full h-96 md:h-3/4 bg-green-200 border-4 border-green-600 rounded-full shadow-lg">
             {/* ปุ่มขึ้น */}
             <button className="absolute top-10 md:top-6 w-20 h-20 md:w-32 md:h-32 lg:w-44 lg:h-44 bg-emerald-900 text-white border-2 border-gray-500 rounded-full focus:outline-none hover:bg-gray-400">
               ▲

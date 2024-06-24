@@ -2,12 +2,19 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import batteryfull from './Img/full.png'
 import bin from './Img/trash.png'
+import Navbar from './Navbar';
 
 function Dashboard() {
   return (
     <>
-        <div className='flex'>
-            <Sidebar/>
+      <div className='flex flex-col md:flex-row h-screen'>
+        <div className='hidden md:block'>
+          <Sidebar />
+        </div>
+        <div className="flex flex-col md:flex-row w-full justify-center items-center h-full p-4">
+          <div className='fixed top-0 block md:hidden'>
+            <Navbar />
+          </div>
             <div className="grid grid-cols-3 grid-rows-3 gap-4 h-screen p-8 w-full">
               {/* กล่องที่ 1 */}
               <div className="col-span-2 row-span-2 bg-green-200 shadow-md rounded-lg border-2 border-green-300 flex flex-col justify-start items-start text-2xl font-bold p-4">
@@ -46,6 +53,7 @@ function Dashboard() {
                 <h1 className='text-4xl'>WIFI</h1>
               </div>
             </div>
+        </div>
         </div>
     </>
   )
