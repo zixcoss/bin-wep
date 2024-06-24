@@ -10,16 +10,16 @@ function Control() {
           <Sidebar />
         </div>
         <div className="flex flex-col md:flex-row w-full justify-center items-center h-full p-4">
-          <div className='block md:hidden'>
+          <div className='fixed top-0 block md:hidden'>
             <Navbar />
           </div>
-          <div className="relative flex flex-col items-center justify-center w-full md:w-3/4 h-full md:h-3/4 bg-green-200 border-4 border-green-600 rounded-full shadow-lg">
+          <div className="relative flex flex-col items-center justify-center w-full h-96 md:w-3/4 h-full md:h-3/4 bg-green-200 border-4 border-green-600 rounded-full shadow-lg">
             {/* ปุ่มขึ้น */}
-            <button className="absolute top-4 md:top-6 w-20 h-20 md:w-32 md:h-32 lg:w-44 lg:h-44 bg-emerald-900 text-white border-2 border-gray-500 rounded-full focus:outline-none hover:bg-gray-400">
+            <button className="absolute top-10 md:top-6 w-20 h-20 md:w-32 md:h-32 lg:w-44 lg:h-44 bg-emerald-900 text-white border-2 border-gray-500 rounded-full focus:outline-none hover:bg-gray-400">
               ▲
             </button>
             {/* ปุ่มลง */}
-            <button className="absolute bottom-4 md:bottom-6 w-20 h-20 md:w-32 md:h-32 lg:w-44 lg:h-44 bg-emerald-900 text-white border-2 border-gray-500 rounded-full focus:outline-none hover:bg-gray-400">
+            <button className="absolute bottom-10 md:bottom-6 w-20 h-20 md:w-32 md:h-32 lg:w-44 lg:h-44 bg-emerald-900 text-white border-2 border-gray-500 rounded-full focus:outline-none hover:bg-gray-400">
               ▼
             </button>
             {/* ปุ่มซ้าย */}
