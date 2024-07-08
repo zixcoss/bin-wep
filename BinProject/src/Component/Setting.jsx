@@ -15,15 +15,15 @@ function Setting() {
     return (
     <>
       <div className='flex flex-col md:flex-row h-screen'>
-        <div className='hidden md:block'>
+        <div className='hidden lg:block'>
           <Sidebar />
         </div>
-          <div className='top-0 w-full block md:hidden'>
+          <div className='fixed top-0 w-full block lg:hidden'>
             <Navbar />
           </div>
-        <div className='p-4 w-full h-full flex flex-col justify-center items-center '>
+        <div className='p-4 w-full h-full flex flex-col justify-center items-center landscape-mobile:mt-32'>
         <h1 className='mb-8 font-bold text-6xl text-emerald-800'>Setting</h1>
-          <div className='w-80 h-2/4 p-4 flex flex-col justify-center items-center bg-green-200 border-2 border-green-300 shadow-md rounded-lg md:w-3/5 '>
+          <div className='w-80 h-80 p-4 flex flex-col justify-center items-center bg-green-200 border-2 border-green-300 shadow-md rounded-lg md:w-3/5 '>
             <div className='w-full bg-white p-4 rounded shadow-md border-2 border-green-600'>
               <label className='block text-lg font-medium text-gray-700'>
               คำที่ใช้เรียก

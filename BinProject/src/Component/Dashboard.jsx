@@ -41,7 +41,7 @@ function Dashboard() {
                               landscape-mobile:row-span-4
                               portrait-desktop:col-span-3 portrait-desktop:row-span-1">
                 <h1 className='portrait-mobile:text-xl md:text-4xl landscape-mobile:text-xl'>ถังขยะ</h1>
-                <div className='border-2 border-red-600 flex flex-col justify-start items-center w-full h-full'>
+                <div className='flex flex-col justify-start items-center w-full h-full'>
                   <img src={bin} alt="" className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
                   <div className='flex flex-col items-center mt-4 md:mt-16 landscape-mobile:mt-8 portrait-desktop:mt-4'>
                       <span className='text-sm md:text-lg landscape-mobile:text-sm'>ปริมาณขยะ</span>
