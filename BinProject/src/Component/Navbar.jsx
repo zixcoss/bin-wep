@@ -17,7 +17,7 @@ function Navbar() {
       </div>
       <div className="flex w-1 h-12 bg-green-400 mx-2 sm:hidden"></div> {/* Divider for large screens */}
       <nav className="flex space-x-4 w-full ">
-        <Link to='/Dashboard' className="flex flex-col items-center shadow-md rounded-lg hover:bg-green-500 transition duration-300 p-2 rounded-lg w-20 sm:w-24">
+        <Link to='/Dashboardtest' className="flex flex-col items-center shadow-md rounded-lg hover:bg-green-500 transition duration-300 p-2 rounded-lg w-20 sm:w-24">
           <img src={home} alt="Dashboard Icon" className="w-8 h-8" />
           <span className='text-emerald-700 text-sm'>Dashboard</span>
         </Link>
@@ -28,10 +28,6 @@ function Navbar() {
         <Link to='/Setting' className="flex flex-col items-center shadow-md rounded-lg hover:bg-green-500 transition duration-300 p-2 rounded-lg w-20 sm:w-24">
           <img src={setting} alt="Setting Icon" className="w-8 h-8" />
           <span className='text-emerald-700 text-sm'>Setting</span>
-        </Link>
-        <Link to='/Dashboardtest' className="flex flex-col items-center shadow-md rounded-lg hover:bg-green-500 transition duration-300 p-2 rounded-lg w-20 sm:w-24">
-          <img src={home} alt="Dashboard Icon" className="w-8 h-8" />
-          <span className='text-emerald-700 text-sm'>Dashboardtest</span>
         </Link>
       </nav>
     </div>
