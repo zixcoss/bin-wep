@@ -8,13 +8,11 @@ import Grapt from './Grapt';
 function Dashboardtest() {
   return (
     <div className="relative flex flex-col lg:flex-row h-screen">
-      {/* Sidebar สำหรับหน้าจอใหญ่ */}
       <div className='fixed hidden lg:block lg:w-1/5 h-screen top-0 left-0 z-50'>
         <Sidebar />
       </div>
 
       <div className='flex flex-col flex-grow w-full lg:ml-72'>
-        {/* Navbar สำหรับหน้าจอเล็ก */}
         <div className='top-0 w-full block lg:hidden'>
           <Navbar />
         </div>
