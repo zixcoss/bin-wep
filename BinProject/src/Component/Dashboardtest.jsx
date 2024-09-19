@@ -57,8 +57,8 @@ function Dashboardtest() {
           <div className="col-span-3 row-span-1 bg-green-300 border-2 border-green-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>สถานะ</h1>
-            <div className='flex flex-col items-center mb-8'>
-              <span className='text-sm md:text-lg landscape-mobile:text-sm'>เข้าโหมดเรียกหาคน</span>
+            <div className='flex w-full justify-around'>
+              <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>เข้าโหมดเรียกหาคน.....</span>
             </div>
           </div>
 
@@ -66,6 +66,9 @@ function Dashboardtest() {
           <div className="col-span-3 row-span-1 bg-yellow-300 border-2 border-yellow-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>WIFI</h1>
+            <div className='flex w-full justify-around'>
+              <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>EXSINNOT</span>
+            </div>
           </div>
 
           {/* กล่องที่ 5 (กราฟ) */}
