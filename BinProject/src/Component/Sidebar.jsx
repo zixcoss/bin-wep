@@ -10,7 +10,7 @@ function Sidebar() {
   return (
     <>
         {/* กรอบใหญ่สุด */}
-        <div className="w-72 h-screen bg-green-200">
+        <div className="w-72 h-full bg-green-200">
             {/* กรอบของโลโก้กับชื่อ */}
             <div className='flex pt-4 shadow-xl rounded-lg'> 
                 <div className="ml-2 logo w-24 flex-grow mb-4">
@@ -35,6 +35,10 @@ function Sidebar() {
                     <Link to='/Setting' className="flex items-center mt-4 py-4 shadow-md rounded-lg hover:bg-green-500 transition duration-300">
                         <img src={setting} alt="Setting Icon" className="w-10 h-10 mr-2 ml-2" />
                         <Link to='/Setting' className='text-3xl text-emerald-700 hover:text-white'>Setting</Link>
+                    </Link>
+                    <Link to='/Dashboardtest' className="flex items-center mt-2 py-4 shadow-md rounded-lg hover:bg-green-500 transition duration-300">
+                        <img src={home} alt="Dashboard Icon" className="w-10 h-10 mr-2 ml-2"/>
+                        <Link to='/Dashboardtest' className='text-3xl text-emerald-700 hover:text-white'>Dashboardtest</Link>
                     </Link>
                 </ul>
             </nav>

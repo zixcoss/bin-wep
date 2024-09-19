@@ -8,6 +8,7 @@ import Wifi from './Component/Wifi.jsx'
 import Dashboard from './Component/Dashboard.jsx';
 import Control from './Component/Control.jsx';
 import Setting from './Component/Setting.jsx';
+import Dashboardtest from './Component/Dashboardtest.jsx';
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path:"/Setting",
     element: <Setting/>
+  },
+  {
+    path:"/Dashboardtest",
+    element: <Dashboardtest/>
   },
 ])
 

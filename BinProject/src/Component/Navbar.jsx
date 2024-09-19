@@ -29,6 +29,10 @@ function Navbar() {
           <img src={setting} alt="Setting Icon" className="w-8 h-8" />
           <span className='text-emerald-700 text-sm'>Setting</span>
         </Link>
+        <Link to='/Dashboardtest' className="flex flex-col items-center shadow-md rounded-lg hover:bg-green-500 transition duration-300 p-2 rounded-lg w-20 sm:w-24">
+          <img src={home} alt="Dashboard Icon" className="w-8 h-8" />
+          <span className='text-emerald-700 text-sm'>Dashboardtest</span>
+        </Link>
       </nav>
     </div>
   );
