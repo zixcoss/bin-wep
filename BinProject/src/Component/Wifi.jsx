@@ -16,7 +16,7 @@ function Wifi() {
     const validWifiPassword = "123456789"; // Replace with the correct Wi-Fi password
 
     if (wifiName === validWifiName && wifiPassword === validWifiPassword) {
-      navigate('/Dashboard'); // เปลี่ยนเส้นทางไปยังหน้า Dashboard
+      navigate('/Dashboardtest'); // เปลี่ยนเส้นทางไปยังหน้า Dashboard
     } else {
       setError('Invalid Wi-Fi Name or Password');
     }

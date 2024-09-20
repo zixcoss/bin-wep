@@ -26,7 +26,7 @@ function Sidebar() {
                 <ul>
                     <Link to='/Dashboardtest' className="flex items-center mt-2 py-4 shadow-md rounded-lg hover:bg-green-500 transition duration-300">
                         <img src={home} alt="Dashboard Icon" className="w-10 h-10 mr-2 ml-2"/>
-                        <Link to='/Dashboard' className='text-3xl text-emerald-700 hover:text-white'>Dashboard</Link>
+                        <Link to='/Dashboardtest' className='text-3xl text-emerald-700 hover:text-white'>Dashboard</Link>
                     </Link>
                     <Link to='/Control' className="flex items-center mt-4 py-4 shadow-md rounded-lg hover:bg-green-500 transition duration-300">
                         <img src={controller} alt="Control Icon" className="w-10 h-10 mr-2 ml-2 " />
