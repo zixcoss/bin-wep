@@ -1,12 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import batteryfull from './Img/full.png';
 import bin from './Img/trash.png';
 import Navbar from './Navbar';
 import Grapt from './Grapt';
+import TrashAlert from './Trashalert';
 
 function Dashboardtest() {
+  const [trashLevel, setTrashLevel] = useState(0); // ระดับขยะเริ่มต้น
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [batteryLevel, setBatteryLevel] = useState(100);
+  const [SSIDBin, setSSIDBin] = useState(100);
+  const [StatusBin, setStatusBin] = useState(100);
+  
+
+  const fetchData = () => {
+    fetch('http://192.168.137.232:8000/getdatadb')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok.');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        setBatteryLevel(parseInt(data.Battery));
+        setTrashLevel(data.Trash);
+        setSSIDBin(data.SSID)
+        setStatusBin(data.Status)
+      })
+      .catch(error => {
+        console.error('Error', error);
+      });
+  };
+
+  useEffect(()=>{
+    fetchData();
+    const interval = setInterval(fetchData,20000);
+    
+    return ()=> clearInterval(interval);
+  },[]);
+
+  useEffect(() => {
+    // ตรวจสอบระดับขยะและแสดงการแจ้งเตือนหากถึง 100%
+    if (trashLevel >= 100) {
+      setAlertVisible(true);
+    }
+  }, [trashLevel]);
+
+  const closeAlert = () => {
+    setAlertVisible(false);
+  };
   return (
+    <>
+    {alertVisible && <TrashAlert onClose={closeAlert} />}
     <div className="relative flex flex-col lg:flex-row h-screen">
       <div className='fixed hidden lg:block lg:w-1/5 h-screen top-0 left-0 z-50'>
         <Sidebar />
@@ -30,7 +77,7 @@ function Dashboardtest() {
               <div className='flex w-full justify-around mt-2 md:w-full portrait-desktop:mt-0'>
                 <div className='flex flex-col items-center mb-8'>
                   <span className='text-sm md:text-lg landscape-mobile:text-sm'>แบตเตอรี่</span>
-                  <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>100%</span>
+                  <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>{batteryLevel}%</span>
                 </div>
                 <div className='flex flex-col items-center '>
                   <span className='text-sm md:text-lg landscape-mobile:text-sm'>อัตราการเสื่อสภาพ</span>
@@ -48,7 +95,7 @@ function Dashboardtest() {
               <img src={bin} alt="Bin" className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
               <div className='flex flex-col items-center mt-4 md:mt-16 landscape-mobile:mt-8 portrait-desktop:mt-4'>
                 <span className='text-sm md:text-lg landscape-mobile:text-sm'>ปริมาณขยะ</span>
-                <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>100%</span>
+                <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>{trashLevel}%</span>
               </div>
             </div>
           </div>
@@ -58,7 +105,7 @@ function Dashboardtest() {
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>สถานะ</h1>
             <div className='flex w-full justify-around'>
-              <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>เข้าโหมดเรียกหาคน.....</span>
+              <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>{StatusBin}</span>
             </div>
           </div>
 
@@ -67,7 +114,7 @@ function Dashboardtest() {
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>WIFI</h1>
             <div className='flex w-full justify-around'>
-              <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>EXSINNOT</span>
+              <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>{SSIDBin}</span>
             </div>
           </div>
 
@@ -80,6 +127,8 @@ function Dashboardtest() {
         </div>
       </div>
     </div>
+    </>
+    
   );
 }
 

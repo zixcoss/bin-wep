@@ -2,15 +2,20 @@ import React, { useState, useEffect } from 'react';
 import bin from './Img/trash.png';
 import Sidebar from './Sidebar';
 import batteryfull from './Img/full.png';
+import empty from './Img/empty.png';
+import verylow from './Img/low3.png';
+import low from './Img/low.png';
+import middle from './Img/midiem.png';
 import Navbar from './Navbar';
 import TrashAlert from './Trashalert'; // นำเข้าคอมโพเนนต์ TrashAlert
 
 function Dashboard() {
   const [trashLevel, setTrashLevel] = useState(0); // ระดับขยะเริ่มต้น
   const [alertVisible, setAlertVisible] = useState(false);
-  const [batteryLevel, setBatteryLevel] = useState(100);
+  const [batteryLevel, setBatteryLevel] = useState(78);
   const [SSIDBin, setSSIDBin] = useState(100);
   const [StatusBin, setStatusBin] = useState(100);
+  
 
   const fetchData = () => {
     fetch('http://192.168.137.232:8000/getdatadb')
@@ -70,7 +75,28 @@ function Dashboard() {
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='portrait-mobile:text-xl landscape-mobile:text-xl md:text-4xl'>แบตเตอรี่</h1>
             <div className='flex flex-col justify-start items-center w-full h-full'>
-              <img src={batteryfull} alt="" className='w-96 landscape-mobile:w-28 portrait-desktop:w-40'/>
+              {batteryLevel ===0 ? (
+                <img src={empty} 
+                alt="" 
+                className='w-96 landscape-mobile:w-28 portrait-desktop:w-40'/>
+              ):batteryLevel >=1 && batteryLevel <=25 ? (
+                <img src={verylow} 
+                alt="" 
+                className='w-96 landscape-mobile:w-28 portrait-desktop:w-40'/>
+              ):batteryLevel >=26 && batteryLevel <=50 ? (
+                <img src={low} 
+                alt="" 
+                className='w-96 landscape-mobile:w-28 portrait-desktop:w-40'/>
+              ):batteryLevel >=51 && batteryLevel <=75 ? (
+                <img src={middle} 
+                alt="" 
+                className='w-96 landscape-mobile:w-28 portrait-desktop:w-40'/>
+              ):batteryLevel >=76 && batteryLevel <=100 ? (
+                <img src={batteryfull} 
+                alt="" 
+                className='w-96 landscape-mobile:w-28 portrait-desktop:w-40'/>
+              ): null
+              }
               <div className='flex w-full justify-around mt-2 md:w-full justify-around mt-2 portrait-desktop:mt-0'>
                 <div className='flex flex-col items-center mb-8'>
                   <span className='text-sm md:text-lg landscape-mobile:text-sm'>แบตเตอรี่</span>

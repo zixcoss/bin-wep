@@ -9,6 +9,7 @@ import Dashboard from './Component/Dashboard.jsx';
 import Control from './Component/Control.jsx';
 import Setting from './Component/Setting.jsx';
 import Dashboardtest from './Component/Dashboardtest.jsx';
+import Imageswitcher from './Component/Imageswitcher.jsx';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path:"/Dashboardtest",
     element: <Dashboardtest/>
+  },
+  {
+    path:"/Imageswitcher",
+    element: <Imageswitcher/>
   },
 ])
 
