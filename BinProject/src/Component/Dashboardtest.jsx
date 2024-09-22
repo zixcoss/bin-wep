@@ -73,7 +73,6 @@ function Dashboardtest() {
 
           {/* กล่องที่ 5 (กราฟ) */}
           <div className="col-span-3 row-span-1 bg-purple-200 border-2 border-purple-600 flex flex-col justify-start items-center p-4 lg:p-8">
-            <h1 className='text-2xl md:text-4xl mb-4'>กราฟ</h1>
             <div className='w-full h-full'>
               <Grapt/>
             </div>

@@ -14,7 +14,7 @@ import Dashboardtest from './Component/Dashboardtest.jsx';
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <Wifi/>
+    element: <Dashboardtest/>
   },
   {
     path: '/Dashboard',
