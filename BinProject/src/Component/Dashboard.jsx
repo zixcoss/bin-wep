@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import bin from './Img/trash.png';
 import Sidebar from './Sidebar';
+import bin1 from './Img/1.png';
+import bin2 from './Img/2.png';
+import bin3 from './Img/3.png';
+import bin4 from './Img/4.png';
+import bin5 from './Img/5.png';
+import bin6 from './Img/6.png';
+import bin7 from './Img/7.png';
+import binv1 from './Img/8.png';
+import binv2 from './Img/9.png';
+import binv3 from './Img/10.png';
+import binv4 from './Img/11.png';
+import binv5 from './Img/12.png';
+import binv6 from './Img/13.png';
+import binv7 from './Img/14.png';
 import batteryfull from './Img/full.png';
 import empty from './Img/empty.png';
 import verylow from './Img/low3.png';
@@ -12,48 +26,62 @@ import TrashAlert from './Trashalert'; // นำเข้าคอมโพเ�
 function Dashboard() {
   const [trashLevel, setTrashLevel] = useState(0); // ระดับขยะเริ่มต้น
   const [alertVisible, setAlertVisible] = useState(false);
-  const [batteryLevel, setBatteryLevel] = useState(78);
+  const [batteryLevel, setBatteryLevel] = useState(100);
   const [SSIDBin, setSSIDBin] = useState(100);
   const [StatusBin, setStatusBin] = useState(100);
   
-
-  const fetchData = () => {
-    fetch('http://192.168.137.232:8000/getdatadb')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok.');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        setBatteryLevel(parseInt(data.Battery));
-        setTrashLevel(data.Trash);
-        setSSIDBin(data.SSID)
-        setStatusBin(data.Status)
-      })
-      .catch(error => {
-        console.error('Error', error);
-      });
-  };
-
-  useEffect(()=>{
-    fetchData();
-    const interval = setInterval(fetchData,20000);
-    
-    return ()=> clearInterval(interval);
-  },[]);
-
   useEffect(() => {
-    // ตรวจสอบระดับขยะและแสดงการแจ้งเตือนหากถึง 100%
-    if (trashLevel >= 100) {
-      setAlertVisible(true);
-    }
-  }, [trashLevel]);
+    const interval = setInterval(() => {
+      setTrashLevel((prevTrashLevel) => {
+        if (prevTrashLevel < 100) {
+          return prevTrashLevel + 10;
+        } else {
+          clearInterval(interval); // หยุดการทำงานเมื่อถึง 100
+          return prevTrashLevel;
+        }
+      });
+    }, 1000); // เพิ่มขึ้นทุกๆ 1 วินาที
 
-  const closeAlert = () => {
-    setAlertVisible(false);
-  };
+    // ล้างการทำงานของ interval เมื่อคอมโพเนนต์ถูกยกเลิก
+    return () => clearInterval(interval);
+  }, []);
+  // const fetchData = () => {
+  //   fetch('http://192.168.137.232:8000/getdatadb')
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok.');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then(data => {
+  //       console.log(data);
+  //       setBatteryLevel(parseInt(data.Battery));
+  //       setTrashLevel(data.Trash);
+  //       setSSIDBin(data.SSID)
+  //       setStatusBin(data.Status)
+  //     })
+  //     .catch(error => {
+  //       console.error('Error', error);
+  //     });
+  // };
+
+  // useEffect(()=>{
+  //   fetchData();
+  //   const interval = setInterval(fetchData,20000);
+    
+  //   return ()=> clearInterval(interval);
+  // },[]);
+
+  // useEffect(() => {
+  //   // ตรวจสอบระดับขยะและแสดงการแจ้งเตือนหากถึง 100%
+  //   if (trashLevel >= 100) {
+  //     setAlertVisible(true);
+  //   }
+  // }, [trashLevel]);
+
+  // const closeAlert = () => {
+  //   setAlertVisible(false);
+  // };
 
   return (
     <>
@@ -75,7 +103,7 @@ function Dashboard() {
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='portrait-mobile:text-xl landscape-mobile:text-xl md:text-4xl'>แบตเตอรี่</h1>
             <div className='flex flex-col justify-start items-center w-full h-full'>
-              {batteryLevel ===0 ? (
+            {batteryLevel ===0 ? (
                 <img src={empty} 
                 alt="" 
                 className='w-96 landscape-mobile:w-28 portrait-desktop:w-40'/>
@@ -115,7 +143,67 @@ function Dashboard() {
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='portrait-mobile:text-xl md:text-4xl landscape-mobile:text-xl'>ถังขยะ</h1>
             <div className='flex flex-col justify-start items-center w-full h-full'>
-              <img src={bin} alt="" className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+              {/* {trashLevel ===0 ? (
+                  <img src={bin1} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=1 && trashLevel <=16 ? (
+                  <img src={bin2} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=17 && trashLevel <=32 ? (
+                  <img src={bin3} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=33 && trashLevel <=48 ? (
+                  <img src={bin4} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=49 && trashLevel <=64 ? (
+                  <img src={bin5} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=65 && trashLevel <=80 ? (
+                  <img src={bin6} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=81 && trashLevel <=100? (
+                  <img src={bin7} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ): null
+              } */}
+              {trashLevel ===0 ? (
+                  <img src={binv1} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=1 && trashLevel <=16 ? (
+                  <img src={binv2} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=17 && trashLevel <=32 ? (
+                  <img src={binv3} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=33 && trashLevel <=48 ? (
+                  <img src={binv4} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=49 && trashLevel <=64 ? (
+                  <img src={binv5} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=65 && trashLevel <=80 ? (
+                  <img src={binv6} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ):trashLevel >=81 && trashLevel <=100? (
+                  <img src={binv7} 
+                  alt="" 
+                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
+                ): null
+              }
+              
               <div className='flex flex-col items-center mt-4 md:mt-16 landscape-mobile:mt-8 portrait-desktop:mt-4'>
                 <span className='text-sm md:text-lg landscape-mobile:text-sm'>ปริมาณขยะ</span>
                 <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>{trashLevel}%</span>
