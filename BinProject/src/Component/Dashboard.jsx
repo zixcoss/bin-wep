@@ -143,36 +143,6 @@ function Dashboard() {
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='portrait-mobile:text-xl md:text-4xl landscape-mobile:text-xl'>ถังขยะ</h1>
             <div className='flex flex-col justify-start items-center w-full h-full'>
-              {/* {trashLevel ===0 ? (
-                  <img src={bin1} 
-                  alt="" 
-                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
-                ):trashLevel >=1 && trashLevel <=16 ? (
-                  <img src={bin2} 
-                  alt="" 
-                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
-                ):trashLevel >=17 && trashLevel <=32 ? (
-                  <img src={bin3} 
-                  alt="" 
-                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
-                ):trashLevel >=33 && trashLevel <=48 ? (
-                  <img src={bin4} 
-                  alt="" 
-                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
-                ):trashLevel >=49 && trashLevel <=64 ? (
-                  <img src={bin5} 
-                  alt="" 
-                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
-                ):trashLevel >=65 && trashLevel <=80 ? (
-                  <img src={bin6} 
-                  alt="" 
-                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
-                ):trashLevel >=81 && trashLevel <=100? (
-                  <img src={bin7} 
-                  alt="" 
-                  className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
-                ): null
-              } */}
               {trashLevel ===0 ? (
                   <img src={binv1} 
                   alt="" 
