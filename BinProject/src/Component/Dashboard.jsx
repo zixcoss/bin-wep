@@ -30,8 +30,7 @@ function Dashboard() {
         if (prevTrashLevel < 100) {
           return prevTrashLevel + 10;
         } else {
-          clearInterval(interval); // หยุดการทำงานเมื่อถึง 100
-          return prevTrashLevel;
+          return 0; // รีเซ็ตกลับไปที่ 0 เมื่อถึง 100
         }
       });
     }, 1000); // เพิ่มขึ้นทุกๆ 1 วินาที
@@ -39,6 +38,21 @@ function Dashboard() {
     // ล้างการทำงานของ interval เมื่อคอมโพเนนต์ถูกยกเลิก
     return () => clearInterval(interval);
   }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBatteryLevel((prevTrashLevel) => {
+        if (prevTrashLevel < 100) {
+          return prevTrashLevel + 10;
+        } else {
+          return 0; // รีเซ็ตกลับไปที่ 0 เมื่อถึง 100
+        }
+      });
+    }, 1000); // เพิ่มขึ้นทุกๆ 1 วินาที
+
+    // ล้างการทำงานของ interval เมื่อคอมโพเนนต์ถูกยกเลิก
+    return () => clearInterval(interval);
+  }, []);
+
   // const fetchData = () => {
   //   fetch('http://192.168.137.232:8000/getdatadb')
   //     .then(response => {
