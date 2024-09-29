@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import bin from './Img/trash.png';
 import Sidebar from './Sidebar';
-import bin1 from './Img/1.png';
-import bin2 from './Img/2.png';
-import bin3 from './Img/3.png';
-import bin4 from './Img/4.png';
-import bin5 from './Img/5.png';
-import bin6 from './Img/6.png';
-import bin7 from './Img/7.png';
-import binv1 from './Img/8.png';
-import binv2 from './Img/9.png';
-import binv3 from './Img/10.png';
-import binv4 from './Img/11.png';
-import binv5 from './Img/12.png';
-import binv6 from './Img/13.png';
-import binv7 from './Img/14.png';
+import binvvv1 from './Img/22.png';
+import binvvv2 from './Img/23.png';
+import binvvv3 from './Img/24.png';
+import binvvv4 from './Img/25.png';
+import binvvv5 from './Img/26.png';
+import binvvv6 from './Img/27.png';
+import binvvv7 from './Img/28.png';
 import batteryfull from './Img/full.png';
 import empty from './Img/empty.png';
 import verylow from './Img/low3.png';
 import low from './Img/low.png';
 import middle from './Img/midiem.png';
 import Navbar from './Navbar';
+import Grapt from './Grapt';
 import TrashAlert from './Trashalert'; // นำเข้าคอมโพเนนต์ TrashAlert
 
 function Dashboard() {
@@ -85,22 +79,24 @@ function Dashboard() {
 
   return (
     <>
-      {alertVisible && <TrashAlert onClose={closeAlert} />} {/* ใช้ TrashAlert */}
+    {alertVisible && <TrashAlert onClose={closeAlert} />}
+    <div className="relative flex flex-col lg:flex-row h-screen">
+      <div className='fixed hidden lg:block lg:w-1/5 h-screen top-0 left-0 z-50'>
+        <Sidebar />
+      </div>
 
-      <div className='flex flex-col lg:flex-row h-screen'>
-        <div className='hidden lg:block'>
-          <Sidebar />
-        </div>
+      <div className='flex flex-col flex-grow w-full lg:ml-72'>
         <div className='top-0 w-full block lg:hidden'>
           <Navbar />
         </div>
-        <div className="grid grid-cols-3 grid-rows-4 gap-4 w-full lg:grid-rows-3 lg:p-8
-                        portrait-mobile:p-4 landscape-mobile:grid-rows-4 landscape-mobile:h-screen landscape-mobile:p-4
-                        portrait-desktop:grid-rows-4 portrait-desktop:grid-cols-3">
+
+        <div className="flex-grow grid grid-cols-3 grid-rows-[auto,auto,auto,1fr] gap-4 p-4 lg:p-8 
+                        portrait-mobile:p-4 landscape-mobile:grid-rows-[auto,auto,auto,1fr] landscape-mobile:h-screen landscape-mobile:p-4 
+                        portrait-desktop:grid-rows-[auto,auto,auto,1fr] portrait-desktop:grid-cols-3">
+
           {/* กล่องที่ 1 */}
-          <div className="col-span-3 row-span-1 bg-green-200 shadow-md rounded-lg border-2 border-green-300 flex flex-col justify-start items-start font-bold p-4 md:col-span-2 row-span-2                 
-                          landscape-mobile:row-span-3
-                          portrait-desktop:col-span-3 portrait-desktop:row-span-1">
+          <div className="col-span-3 row-span-1 bg-green-200 shadow-md rounded-lg border-2 border-green-300 flex flex-col justify-start items-start font-bold p-4 md:col-span-2 row-span-2 
+                          landscape-mobile:row-span-3 portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='portrait-mobile:text-xl landscape-mobile:text-xl md:text-4xl'>แบตเตอรี่</h1>
             <div className='flex flex-col justify-start items-center w-full h-full'>
             {batteryLevel ===0 ? (
@@ -125,7 +121,7 @@ function Dashboard() {
                 className='w-96 landscape-mobile:w-28 portrait-desktop:w-40'/>
               ): null
               }
-              <div className='flex w-full justify-around mt-2 md:w-full justify-around mt-2 portrait-desktop:mt-0'>
+              <div className='flex w-full justify-around mt-2 md:w-full portrait-desktop:mt-0'>
                 <div className='flex flex-col items-center mb-8'>
                   <span className='text-sm md:text-lg landscape-mobile:text-sm'>แบตเตอรี่</span>
                   <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>{batteryLevel}%</span>
@@ -137,68 +133,78 @@ function Dashboard() {
               </div>
             </div>
           </div>
+
           {/* กล่องที่ 2 */}
-          <div className="col-span-3 row-span-1 bg-blue-300 border-2 border-blue-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-3
-                          landscape-mobile:row-span-4
-                          portrait-desktop:col-span-3 portrait-desktop:row-span-1">
+          <div className="col-span-3 row-span-1 bg-blue-300 border-2 border-blue-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-3 
+                          landscape-mobile:row-span-4 portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='portrait-mobile:text-xl md:text-4xl landscape-mobile:text-xl'>ถังขยะ</h1>
             <div className='flex flex-col justify-start items-center w-full h-full'>
               {trashLevel ===0 ? (
-                  <img src={binv1} 
+                  <img src={binvvv1} 
                   alt="" 
                   className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
                 ):trashLevel >=1 && trashLevel <=16 ? (
-                  <img src={binv2} 
+                  <img src={binvvv2} 
                   alt="" 
                   className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
                 ):trashLevel >=17 && trashLevel <=32 ? (
-                  <img src={binv3} 
+                  <img src={binvvv3} 
                   alt="" 
                   className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
                 ):trashLevel >=33 && trashLevel <=48 ? (
-                  <img src={binv4} 
+                  <img src={binvvv4} 
                   alt="" 
                   className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
                 ):trashLevel >=49 && trashLevel <=64 ? (
-                  <img src={binv5} 
+                  <img src={binvvv5} 
                   alt="" 
                   className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
                 ):trashLevel >=65 && trashLevel <=80 ? (
-                  <img src={binv6} 
+                  <img src={binvvv6} 
                   alt="" 
                   className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
                 ):trashLevel >=81 && trashLevel <=100? (
-                  <img src={binv7} 
+                  <img src={binvvv7} 
                   alt="" 
                   className='w-36 mt-4 md:w-96 md:mt-24 landscape-mobile:w-36 landscape-mobile:mt-8 portrait-desktop:w-36 portrait-desktop:mt-2'/>
                 ): null
               }
-              
               <div className='flex flex-col items-center mt-4 md:mt-16 landscape-mobile:mt-8 portrait-desktop:mt-4'>
                 <span className='text-sm md:text-lg landscape-mobile:text-sm'>ปริมาณขยะ</span>
                 <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>{trashLevel}%</span>
               </div>
             </div>
           </div>
+
           {/* กล่องที่ 3 */}
-          <div className="col-span-3 row-span-1 bg-green-300 border-2 border-green-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1
+          <div className="col-span-3 row-span-1 bg-green-300 border-2 border-green-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>สถานะ</h1>
             <div className='flex w-full justify-around'>
               <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>{StatusBin}</span>
             </div>
           </div>
+
           {/* กล่องที่ 4 */}
-          <div className="col-span-3 row-span-1 bg-yellow-300 border-2 border-yellow-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1
+          <div className="col-span-3 row-span-1 bg-yellow-300 border-2 border-yellow-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>WIFI</h1>
             <div className='flex w-full justify-around'>
               <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>{SSIDBin}</span>
             </div>
           </div>
+
+          {/* กล่องที่ 5 (กราฟ) */}
+          <div className="col-span-3 row-span-1 bg-purple-200 border-2 border-purple-600 flex flex-col justify-start items-center p-4 lg:p-8">
+            <div className='w-full h-full'>
+              <Grapt/>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
     </>
+    
   );
 }
 
