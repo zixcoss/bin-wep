@@ -21,8 +21,8 @@ function Dashboard() {
   const [trashLevel, setTrashLevel] = useState(0); // ระดับขยะเริ่มต้น
   const [alertVisible, setAlertVisible] = useState(false);
   const [batteryLevel, setBatteryLevel] = useState(100);
-  const [SSIDBin, setSSIDBin] = useState(100);
-  const [StatusBin, setStatusBin] = useState(100);
+  const [SSIDBin, setSSIDBin] = useState("EXINNOT");
+  const [StatusBin, setStatusBin] = useState("โหมดที่ 1 : เดินสุ่ม");
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -149,7 +149,7 @@ function Dashboard() {
           </div>
 
           {/* กล่องที่ 2 */}
-          <div className="col-span-3 row-span-1 bg-blue-300 border-2 border-blue-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-3 
+          <div className="col-span-3 row-span-1 bg-lime-200 shadow-md rounded-lg border-2 border-lime-300 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-3 
                           landscape-mobile:row-span-4 portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='portrait-mobile:text-xl md:text-4xl landscape-mobile:text-xl'>ถังขยะ</h1>
             <div className='flex flex-col justify-start items-center w-full h-full'>
@@ -191,25 +191,25 @@ function Dashboard() {
           </div>
 
           {/* กล่องที่ 3 */}
-          <div className="col-span-3 row-span-1 bg-green-300 border-2 border-green-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
+          <div className="col-span-3 row-span-1 bg-teal-200 shadow-md rounded-lg border-2 border-teal-300 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>สถานะ</h1>
             <div className='flex w-full justify-around'>
-              <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>{StatusBin}</span>
+              <span className='text-xl text-gray-700 md:text-lg landscape-mobile:text-base'>{StatusBin}</span>
             </div>
           </div>
 
           {/* กล่องที่ 4 */}
-          <div className="col-span-3 row-span-1 bg-yellow-300 border-2 border-yellow-600 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
+          <div className="col-span-3 row-span-1 bg-cyan-200 shadow-md rounded-lg border-2 border-cyan-300 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
             <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>WIFI</h1>
             <div className='flex w-full justify-around'>
-              <span className='text-xl text-gray-500 md:text-lg landscape-mobile:text-xl'>{SSIDBin}</span>
+              <span className='text-xl text-gray-700 md:text-lg landscape-mobile:text-base'>{SSIDBin}</span>
             </div>
           </div>
 
           {/* กล่องที่ 5 (กราฟ) */}
-          <div className="col-span-3 row-span-1 bg-purple-200 border-2 border-purple-600 flex flex-col justify-start items-center p-4 lg:p-8">
+          <div className="col-span-3 row-span-1 bg-sky-200 shadow-md rounded-lg border-2 border-sky-300 flex flex-col justify-start items-center p-4 lg:p-8">
             <div className='w-full h-full'>
               <Grapt/>
             </div>
