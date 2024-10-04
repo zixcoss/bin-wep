@@ -15,7 +15,7 @@ import Imageswitcher from './Component/Imageswitcher.jsx';
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <Dashboardtest/>
+    element: <Wifi/>
   },
   {
     path: '/Dashboard',
