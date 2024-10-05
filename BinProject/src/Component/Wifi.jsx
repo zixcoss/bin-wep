@@ -26,11 +26,11 @@ function Wifi() {
       <div className="flex items-center justify-center min-h-screen bg-green-200">
         <div className="bg-emerald-400 p-8 rounded-lg shadow-md max-w-md w-full text-center">
           <img className="mx-auto mb-4" src={WifiIcon} alt="Wi-Fi Icon" width="72" height="72" />
-          <h1 className="text-emerald-900 text-2xl font-bold mb-6">Setting WiFi</h1>
+          <h1 className="text-emerald-900 text-2xl font-bold mb-6">Setting Wi-Fi</h1>
           <form className="space-y-4" onSubmit={handleConnect}>
             {error && <div className="text-red-500 text-xl font-bold mb-4">{error}</div>}
             <div>
-              <label htmlFor="wifiName" className="block text-left text-sm font-medium text-gray-700 mb-2">SSID/Name wifi</label>
+              <label htmlFor="wifiName" className="block text-left text-sm font-medium text-gray-700 mb-2">SSID/Wi-Fi Name</label>
               <input type="text" 
                 id="wifiName" 
                 className="form-input mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-emerald-900" 
