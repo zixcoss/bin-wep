@@ -80,16 +80,16 @@ function Dashboard() {
   //   return ()=> clearInterval(interval);
   // },[]);
 
-  // useEffect(() => {
-  //   // ตรวจสอบระดับขยะและแสดงการแจ้งเตือนหากถึง 100%
-  //   if (trashLevel >= 100) {
-  //     setAlertVisible(true);
-  //   }
-  // }, [trashLevel]);
+  useEffect(() => {
+    // ตรวจสอบระดับขยะและแสดงการแจ้งเตือนหากถึง 100%
+    if (trashLevel >= 100) {
+      setAlertVisible(true);
+    }
+  }, [trashLevel]);
 
-  // const closeAlert = () => {
-  //   setAlertVisible(false);
-  // };
+  const closeAlert = () => {
+    setAlertVisible(false);
+  };
 
   return (
     <>
