@@ -104,7 +104,7 @@ function Dashboard() {
           <Navbar />
         </div>
 
-        <div className="flex-grow grid grid-cols-3 grid-rows-[auto,auto,auto,1fr] gap-4 p-4 lg:p-8 
+        <div className="bg-gray-300 flex-grow grid grid-cols-3 grid-rows-[auto,auto,auto,1fr] gap-4 p-4 lg:p-8 
                         portrait-mobile:p-4 landscape-mobile:grid-rows-[auto,auto,auto,1fr] landscape-mobile:h-screen landscape-mobile:p-4 
                         portrait-desktop:grid-rows-[auto,auto,auto,1fr] portrait-desktop:grid-cols-3">
 
