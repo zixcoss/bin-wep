@@ -80,16 +80,16 @@ function Dashboard() {
   //   return ()=> clearInterval(interval);
   // },[]);
 
-  useEffect(() => {
-    // ตรวจสอบระดับขยะและแสดงการแจ้งเตือนหากถึง 100%
-    if (trashLevel >= 100) {
-      setAlertVisible(true);
-    }
-  }, [trashLevel]);
+  // useEffect(() => {
+  //   // ตรวจสอบระดับขยะและแสดงการแจ้งเตือนหากถึง 100%
+  //   if (trashLevel >= 100) {
+  //     setAlertVisible(true);
+  //   }
+  // }, [trashLevel]);
 
-  const closeAlert = () => {
-    setAlertVisible(false);
-  };
+  // const closeAlert = () => {
+  //   setAlertVisible(false);
+  // };
 
   return (
     <>
@@ -104,7 +104,7 @@ function Dashboard() {
           <Navbar />
         </div>
 
-        <div className="bg-gray-300 flex-grow grid grid-cols-3 grid-rows-[auto,auto,auto,1fr] gap-4 p-4 lg:p-8 
+        <div className="flex-grow grid grid-cols-3 grid-rows-[auto,auto,auto,1fr] gap-4 p-4 lg:p-8 
                         portrait-mobile:p-4 landscape-mobile:grid-rows-[auto,auto,auto,1fr] landscape-mobile:h-screen landscape-mobile:p-4 
                         portrait-desktop:grid-rows-[auto,auto,auto,1fr] portrait-desktop:grid-cols-3">
 
@@ -202,7 +202,7 @@ function Dashboard() {
           {/* กล่องที่ 4 */}
           <div className="col-span-3 row-span-1 bg-cyan-200 shadow-md rounded-lg border-2 border-cyan-300 flex flex-col justify-start items-start text-2xl font-bold p-4 md:col-span-1 row-span-1 
                           portrait-desktop:col-span-3 portrait-desktop:row-span-1">
-            <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>WIFI</h1>
+            <h1 className='text-2xl md:text-4xl portrait-mobile:text-xl landscape-mobile:text-xl'>WI-FI</h1>
             <div className='flex w-full justify-around'>
               <span className='text-xl text-gray-700 md:text-lg landscape-mobile:text-base'>{SSIDBin}</span>
             </div>

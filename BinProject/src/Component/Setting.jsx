@@ -25,7 +25,7 @@ function Setting() {
           <div className='fixed top-0 w-full block lg:hidden'>
             <Navbar />
           </div>
-        <div className='bg-gray-300 p-4 w-full h-full flex flex-col justify-center items-center landscape-mobile:mt-52  portrait-mobile:mt-8'>
+        <div className='p-4 w-full h-full flex flex-col justify-center items-center landscape-mobile:mt-52  portrait-mobile:mt-8'>
         
         <h1 className=' font-bold text-6xl text-emerald-800'>Setting</h1>
           <div className='mt-8 portrait-desktop:mt-8 landscape-desktop:mt-8 w-80 h-3/5 p-4 flex flex-col justify-center items-center bg-green-200 border-2 border-green-300 shadow-md rounded-lg md:w-3/5 landscape-mobile:mt-8 landscape-mobile:w-4/5 portrait-mobile:mt-8 h-4/5 h-fit'>

@@ -97,7 +97,7 @@ const Grapt = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Battery Dashboard</h1>
+      <h1 className="text-2xl font-bold mb-4">บันทึกการใช้งานแบตเตอรี่ </h1>
 
       <div className="mb-4">
         <button
