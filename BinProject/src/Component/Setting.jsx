@@ -3,11 +3,30 @@ import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 
 function Setting() {
-    const [name, setName] = useState(''); // สถานะสำหรับเก็บชื่อ
+    const [name, setName] = useState('ถังขยะมาหาหน่อย'); // สถานะสำหรับเก็บชื่อ
     const [rangeValue, setRangeValue] = useState(30); // สถานะสำหรับเก็บค่า range เริ่มต้นที่ 30
     const [rangeDistanceValue, setRangeDistanceValue] = useState(30); // สถานะสำหรับเก็บค่า range เริ่มต้นที่ 30
     const [savedData, setSavedData] = useState({ name: '', rangeValue: 30, rangeDistanceValue: 30 }); // เก็บข้อมูลที่บันทึก
 
+    const fetchData = () => {
+        fetch('http://127.0.0.1:5000/api/getdata?page=Setting')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok.');
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log(data);
+            setName(data.name);
+            setRangeValue(data.gohome);
+            setRangeDistanceValue(data.stopdistance);
+          })
+          .catch(error => {
+            console.error('Error', error);
+          });
+      };
+    
     const handleNameChange = (e) => {
         setName(e.target.value); // อัปเดตชื่อเมื่อมีการเปลี่ยนแปลงใน input
     };
@@ -22,12 +41,35 @@ function Setting() {
 
     const handleSave = () => {
         setSavedData({ name, rangeValue, rangeDistanceValue }); // บันทึกข้อมูลเมื่อกดปุ่ม
-        alert('ข้อมูลถูกบันทึกแล้ว!');
+        let data = {
+            name : name,
+            gohome : rangeValue,
+            stopdistance : rangeDistanceValue
+        }
+        fetch('http://127.0.0.1:5000/api/update', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            alert('ข้อมูลถูกบันทึกแล้ว!');
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Failed to send data.');
+        });
+        
     };
+
+    
 
     return (
         <>
-            <div className="flex flex-col md:flex-row h-screen">
+            <div className="flex flex-col md:flex-row h-screen" onLoad={fetchData}>
                 <div className="hidden lg:block">
                     <Sidebar />
                 </div>
