@@ -9,7 +9,7 @@ def get_data():
     data = {}
     action = request.args.get('page')
     if action == "Dashboard":
-        with open("WebAppBin\Data2.csv", mode='r', encoding='utf-8') as file:
+        with open("data.csv", mode='r', encoding='utf-8') as file:
             raw_data = file.readlines()
             for x in raw_data:
                 strip_data = x.strip()
@@ -40,7 +40,7 @@ def get_data():
 def get_update():
     data = request.json  
     print(data["name"])
-    with open("WebAppBin\Setting.csv", mode='w',encoding='utf-8') as file:
+    with open("Setting.csv", mode='w',encoding='utf-8') as file:
         file.write(data["name"]+","+str(data["gohome"])+","+str(data["stopdistance"]))
 
     return jsonify({'message': 'CSV updated successfully!'})
