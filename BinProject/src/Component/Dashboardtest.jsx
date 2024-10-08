@@ -22,7 +22,7 @@ function Dashboardtest() {
   const [batteryLevel, setBatteryLevel] = useState(100);
   const [SSIDBin, setSSIDBin] = useState(0);
   const [StatusBin, setStatusBin] = useState(0);
-  const [baterrydestroy, setBatterydestroy] = useState(0);
+  const [batterrydestroy, setBatterydestroy] = useState(0);
   
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -54,7 +54,7 @@ function Dashboardtest() {
   // }, []);
 
   const fetchData = () => {
-    fetch('http://192.168.202.225:5000/api/data')
+    fetch('http://127.0.0.1:5000/api/data')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok.');
@@ -142,7 +142,7 @@ function Dashboardtest() {
                 </div>
                 <div className='flex flex-col items-center '>
                   <span className='text-sm md:text-lg landscape-mobile:text-sm'>อัตราการเสื่อสภาพ</span>
-                  <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>{baterrydestroy}%</span>
+                  <span className='text-3xl md:text-5xl landscape-mobile:text-3xl portrait-desktop:text-4xl'>{batterrydestroy}%</span>
                 </div>
               </div>
             </div>
