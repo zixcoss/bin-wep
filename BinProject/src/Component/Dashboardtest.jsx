@@ -23,7 +23,6 @@ function Dashboardtest() {
   const [SSIDBin, setSSIDBin] = useState(0);
   const [StatusBin, setStatusBin] = useState(0);
   const [batterrydestroy, setBatterydestroy] = useState(0);
-  
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     setTrashLevel((prevTrashLevel) => {
